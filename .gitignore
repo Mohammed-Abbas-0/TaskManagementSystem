@@ -7,3 +7,9 @@ obj/
 *.suo
 *.userosscache
 *.sln.docstates
+# Ignore appsettings.json
+TaskManagementSystemAPI/appsettings.json
+
+# Ignore other sensitive files (example)
+TaskManagementSystemAPI/appsettings.Development.json
+
