@@ -2,7 +2,7 @@
 The Task Management System is a web application designed to help users efficiently manage and track their tasks. Built with ASP.NET Core, this application leverages Domain-Driven Design (DDD), Command Query Responsibility Segregation (CQRS), JSON Web Tokens (JWT) for authentication, and Repository patterns for data access.​
 
 
-** Features **
+## Features 
 Task Management: Create, read, update, and delete tasks with ease.​
 
 User Authentication: Secure login system utilizing JWT for user authentication.​
