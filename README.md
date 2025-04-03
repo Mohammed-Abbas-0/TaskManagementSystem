@@ -16,15 +16,15 @@ Technologies Used
 Backend: ASP.NET Core​
 
 
-Authentication: JWT (JSON Web Tokens)​
+** Authentication: JWT (JSON Web Tokens)​
 
-Architecture: DDD (Domain-Driven Design), CQRS (Command Query Responsibility Segregation)​
+** Architecture: DDD (Domain-Driven Design), CQRS (Command Query Responsibility Segregation)​
 
 Data Access: Repository Pattern​
 
 API Documentation: Swagger​
 
-Getting Started
+## Getting Started
 To get a local copy up and running, follow these steps:
 
 Clone the Repository:
