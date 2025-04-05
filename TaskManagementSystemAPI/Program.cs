@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System;
 using System.Text;
 using TaskManagementSystem.Application.Commands.Classess;
@@ -16,6 +17,16 @@ using TaskManagementSystem.Interface.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// إعداد Serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day) // تخزين في ملف يومي
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+// استبدال اللوجر الافتراضي بـ Serilog
+builder.Host.UseSerilog();
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -99,6 +110,7 @@ builder.Services.AddSwaggerGen(idx =>
 
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

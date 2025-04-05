@@ -13,3 +13,5 @@ TaskManagementSystemAPI/appsettings.json
 # Ignore other sensitive files (example)
 TaskManagementSystemAPI/appsettings.Development.json
 
+*/Logs
+
