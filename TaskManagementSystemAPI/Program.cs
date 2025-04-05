@@ -9,6 +9,7 @@ using Serilog;
 using System;
 using System.Text;
 using TaskManagementSystem.Application.Commands.Classess;
+using TaskManagementSystem.Application.OrganizingEndpoints;
 using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.ValueObjects;
 using TaskManagementSystem.Infrastructures.Persistence;
@@ -132,6 +133,8 @@ using (var scope = app.Services.CreateScope())
     // استدعاء الدالة التي تقوم بتهيئة البيانات
     SeedData.SeedRolesAsync(userManager, roleManager).Wait();
 }
+app.MapTaskEndpoints();
+
 
 app.MapControllers();
 
