@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +15,7 @@ using TaskManagementSystem.Domain.Entities;
 using TaskManagementSystem.Domain.ValueObjects;
 using TaskManagementSystem.Infrastructures.Persistence;
 using TaskManagementSystem.Interface.Dtos;
+using TaskManagementSystemAPI.Middlewares;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -122,6 +124,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<CustomRequestMiddleware>();
+app.UseMiddleware<RequestTimingMiddleware>();
 
 
 using (var scope = app.Services.CreateScope())
