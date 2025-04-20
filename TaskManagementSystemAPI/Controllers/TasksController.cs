@@ -34,5 +34,12 @@ namespace TaskManagementSystemAPI.Controllers
             var taskId = await _mediator.Send(command);
             return Ok(taskId);
         }
+
+        [HttpPost("gettaskbycode")]
+        public async Task<IActionResult> GetTaskByCode([FromBody] GetTaskByCodeCommand command)
+        {
+            var task = await _mediator.Send(command);
+            return Ok(task);
+        }
     }
 }

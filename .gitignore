@@ -15,3 +15,6 @@ TaskManagementSystemAPI/appsettings.Development.json
 
 */Logs
 
+*/Dockerfile
+*docker-compose.yml
+

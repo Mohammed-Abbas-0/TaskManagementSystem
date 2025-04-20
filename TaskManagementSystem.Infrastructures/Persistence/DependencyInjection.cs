@@ -17,6 +17,7 @@ namespace TaskManagementSystem.Infrastructures.Persistence
             Services.AddDbContext<AppDbContext>(idx => idx.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             Services.AddScoped<ITaskRepository, TaskRepository>();
+            Services.AddScoped(typeof(IGenericInterface<,>), typeof(GenericInterface<,>));
 
             Services.AddScoped<IAuthService, AuthService>();
 
